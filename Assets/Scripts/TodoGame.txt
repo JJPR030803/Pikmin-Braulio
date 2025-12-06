@@ -1,0 +1,37 @@
+Pikmins:
+
+red pikmin: only this pikmin stay in the fire
+blue pikmin:cann swim and stay in the water also can rescue pikmins that cant swim
+yellow pikmin:jumps very high can stay in high voltage areas and can excavete very fast
+white pikmin:can find tresures under floor and can stay in poisonous areas
+purple pikmin:very strong and heavy
+bulbim:resist every element
+pink pikmin:just fly
+rock pikmin:can break cristals or hard sufaces
+ice pikmin:can freeze ponds of water and can stay in very cold areas also swim a little
+luminous pikmin:is the only pikmin that stay in the night and save pikmins at night and teleports and makes charge
+dark pikmin : can stay in the dark and bite
+pellets:
+stay in a flower and if you kill the flower the flower will grow soon but the pellet can be carried by any pikmin
+ and the pikmin go to the onion to be reproduced
+onion:
+
+store pikmins and reproduce pikmins with pellets or dead enemies
+
+Obstacles:
+
+little electric wall :just yellow pikmins destroy this
+micro volcan : shoots fire and are destroyed by red pikmins
+dark paths : just dark pikmins can pass here
+magic micro volcan:shoots wierd water if a pikmin touches this can be froze
+fire : just pikmins that resist fire 
+water : just pikmins can swim pass 
+Breackble walls :
+normal wall :can be destroyed by any pikmin
+rock wall : can be destroyed by bombs
+electric wall : can be destroyed by yellow pikmin
+cold wall : can be destroyed by ice pikmin
+volcanic wall:can be destroyed by red pikmin
+dark wall : can be destroyed by dark pikmin
+Error wall: can be destroyed by any capitan
+hard wall : can be destroyed by any pikminhelp 
