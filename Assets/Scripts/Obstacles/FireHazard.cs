@@ -105,8 +105,13 @@ public class FireHazard : ObstacleBase
                 if (renderer != null && renderer.material != null)
                 {
                     renderer.material.color = fireColor;
-                    renderer.material.EnableKeyword("_EMISSION");
-                    renderer.material.SetColor("_EmissionColor", fireColor * fireGlowIntensity);
+
+                    // Only apply emission if material supports it
+                    if (renderer.material.HasProperty("_EmissionColor"))
+                    {
+                        renderer.material.EnableKeyword("_EMISSION");
+                        renderer.material.SetColor("_EmissionColor", fireColor * fireGlowIntensity);
+                    }
                 }
             }
         }
@@ -125,10 +130,13 @@ public class FireHazard : ObstacleBase
                     color.a = healthRatio;
                     renderer.material.color = color;
 
-                    // Update fire glow
-                    renderer.material.EnableKeyword("_EMISSION");
-                    Color emissionColor = fireColor * fireGlowIntensity * healthRatio;
-                    renderer.material.SetColor("_EmissionColor", emissionColor);
+                    // Update fire glow - only if material supports emission
+                    if (renderer.material.HasProperty("_EmissionColor"))
+                    {
+                        renderer.material.EnableKeyword("_EMISSION");
+                        Color emissionColor = fireColor * fireGlowIntensity * healthRatio;
+                        renderer.material.SetColor("_EmissionColor", emissionColor);
+                    }
                 }
             }
         }

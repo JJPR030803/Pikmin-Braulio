@@ -199,6 +199,12 @@ public class PikminManager : MonoBehaviour
     
     void UpdateFormations()
     {
+        if (playerTransform == null)
+        {
+            Debug.LogWarning("[PikminManager] Player transform is missing!");
+            return;
+        }
+
         for (int i = 0; i < activePikmin.Count; i++)
         {
             if (activePikmin[i] != null)

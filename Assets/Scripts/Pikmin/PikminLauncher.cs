@@ -191,10 +191,18 @@ public class PikminLauncher : MonoBehaviour
     
     void UpdateAim()
     {
+        // Safety check for camera
+        if (playerCamera == null)
+        {
+            Debug.LogWarning("[PikminLauncher] Camera is missing!");
+            canLaunch = false;
+            return;
+        }
+
         // Raycast to find target point
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
+
         // Use a larger raycast distance and check if we hit anything
         if (Physics.Raycast(ray, out hit, 100f))
         {

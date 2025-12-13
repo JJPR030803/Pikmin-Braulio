@@ -36,12 +36,18 @@ public class ElectricWall : ObstacleBase
                 if (renderer != null && renderer.material != null)
                 {
                     renderer.material.color = electricColor;
-                    renderer.material.EnableKeyword("_EMISSION");
-                    renderer.material.SetColor("_EmissionColor", electricColor * electricGlowIntensity);
+
+                    // Only apply emission if material supports it
+                    if (renderer.material.HasProperty("_EmissionColor"))
+                    {
+                        renderer.material.EnableKeyword("_EMISSION");
+                        renderer.material.SetColor("_EmissionColor", electricColor * electricGlowIntensity);
+                    }
                 }
             }
         }
     }
+    
 
     protected override void UpdateRenderers(float healthRatio)
     {
@@ -56,10 +62,13 @@ public class ElectricWall : ObstacleBase
                     color.a = healthRatio;
                     renderer.material.color = color;
 
-                    // Update electric glow
-                    renderer.material.EnableKeyword("_EMISSION");
-                    Color emissionColor = electricColor * electricGlowIntensity * healthRatio;
-                    renderer.material.SetColor("_EmissionColor", emissionColor);
+                    // Update electric glow - only if material supports emission
+                    if (renderer.material.HasProperty("_EmissionColor"))
+                    {
+                        renderer.material.EnableKeyword("_EMISSION");
+                        Color emissionColor = electricColor * electricGlowIntensity * healthRatio;
+                        renderer.material.SetColor("_EmissionColor", emissionColor);
+                    }
                 }
             }
         }
