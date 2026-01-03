@@ -38,7 +38,7 @@ public class BluePikmin : PikminType
         rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
-            originalDrag = rb.drag;
+            originalDrag = rb.linearDamping;
         }
     }
 
@@ -74,9 +74,9 @@ public class BluePikmin : PikminType
         rb.AddForce(Vector3.up * swimUpForce, ForceMode.Acceleration);
 
         // Adjust drag for swimming
-        if (rb.drag != waterDrag)
+        if (rb.linearDamping != waterDrag)
         {
-            rb.drag = waterDrag;
+            rb.linearDamping = waterDrag;
         }
 
         // Play swim effect
@@ -188,7 +188,7 @@ public class BluePikmin : PikminType
             // Restore original drag
             if (rb != null)
             {
-                rb.drag = originalDrag;
+                rb.linearDamping = originalDrag;
             }
 
             if (swimEffect != null && swimEffect.isPlaying)

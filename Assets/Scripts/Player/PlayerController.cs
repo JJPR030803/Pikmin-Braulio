@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
         Vector3 targetVelocity = moveDirection * currentSpeed;
 
         // Apply movement (preserve vertical velocity for gravity)
-        rb.velocity = new Vector3(targetVelocity.x, rb.velocity.y, targetVelocity.z);
+        rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
 
         if (showDebugInfo && moveDirection.magnitude > 0.1f)
         {

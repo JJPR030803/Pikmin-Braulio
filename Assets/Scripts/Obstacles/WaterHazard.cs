@@ -227,7 +227,7 @@ public class WaterHazard : ObstacleBase
         Rigidbody rb = pikminCollider.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.drag = waterDrag;
+            rb.linearDamping = waterDrag;
         }
     }
 
@@ -241,7 +241,7 @@ public class WaterHazard : ObstacleBase
         {
             // Apply upward force to simulate buoyancy
             rb.AddForce(Vector3.up * buoyancyForce * Time.deltaTime, ForceMode.Acceleration);
-            rb.drag = waterDrag * 0.5f; // Less drag for swimming Pikmin
+            rb.linearDamping = waterDrag * 0.5f; // Less drag for swimming Pikmin
         }
     }
 
